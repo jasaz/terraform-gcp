@@ -7,16 +7,26 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+    permissions:
+      id-token: write
+      contents: read
 
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v3
-      with:
-        terraform_version: "1.1.7"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Initialize Terraform
-      uses: terraform init
+      - name: Configure GCP Credentials
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1025759812276/locations/global/workloadIdentityPools/github/providers/my-rep
+          service_account: github-workload-identifier-sa@cloudrun-test-415115.iam.gserviceaccount.com
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.1.7"
+
+      - name: Initialize Terraform
+        uses: terraform init
 
 

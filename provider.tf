@@ -9,8 +9,8 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "cloudrun-test-415115-terraform"
-    prefix = "terrform/state"
+    bucket = var.tfstate_bucket
+    prefix = var.tfstate_prefix
   }
 
   provider "google" {

@@ -1,16 +1,16 @@
 terraform {
   
-  required_version="~>1.1.17"
+  required_version=">1.1.17"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "~> 5.18"
+      version = "> 5.18"
     }
   }
 
   backend "gcs" {
-    bucket = "cloudrun-test-415115-terraform"
-    prefix = "terrform/state"
+    bucket = var.tfstate_bucket
+    prefix = var.tfstate_prefix
   }
 
   provider "google" {

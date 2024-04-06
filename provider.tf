@@ -5,6 +5,7 @@ terraform {
       version = "~> 5.18"
     }
   }
+}
 
   backend "gcs" {
     bucket = var.tfstate_bucket
@@ -16,4 +17,4 @@ terraform {
     region  = var.region
   }     
 
-}
+

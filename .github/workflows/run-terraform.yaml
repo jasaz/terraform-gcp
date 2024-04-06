@@ -19,7 +19,7 @@ jobs:
       - name: Configure GCP Credentials
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: projects/1025759812276/locations/global/workloadIdentityPools/github/providers/my-rep
+          workload_identity_provider: projects/1025759812276/locations/global/workloadIdentityPools/github/providers/my-repo
           service_account: github-workload-identifier-sa@cloudrun-test-415115.iam.gserviceaccount.com
 
       - name: Setup Terraform

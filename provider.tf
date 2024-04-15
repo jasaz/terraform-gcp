@@ -6,10 +6,10 @@ terraform {
     }
   }
 
-  backend "gcs" {
+/*  backend "gcs" {
     bucket = "cloudrun-test-415115-terraform"
     prefix = "terrform/state"
-  }
+  } */
 }
 
   provider "google" {

@@ -32,3 +32,21 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+
+      - name: Terraform validate
+        id: validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -input=false
+        continue-on-error: true
+
+      - name: Check Terraform Plan Status
+        if:  steps.plan.outcome == 'success'
+        run: echo "Terraform plan succeeded"
+      - name: Check Terraform Plan Status
+        if:  steps.plan.outcome == 'failure'
+        run: |
+          echo "Terraform plan failed"
+          exit 1

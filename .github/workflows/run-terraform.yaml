@@ -50,4 +50,6 @@ jobs:
         run: echo "Terraform plan succeeded"
       - name: Check Terraform Plan Status
         if:  steps.plan.outcome == 'failure'
-        run: echo "Terraform plan failed"
+        run: |
+          echo "Terraform plan failed"
+          exit 1

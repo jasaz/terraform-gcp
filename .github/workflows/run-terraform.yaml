@@ -50,3 +50,7 @@ jobs:
         run: |
           echo "Terraform plan failed"
           exit 1
+
+      - name: Terraform Apply
+        if:  steps.plan.outcome == 'success'
+        run: terraform apply -auto-approve

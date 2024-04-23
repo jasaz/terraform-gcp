@@ -1,5 +1,5 @@
 resource "google_service_account_iam_binding" "cr-sa-github-wi-sauser-binding" {
-    service_account_id = data.google_service_account.workload-identifier-sa
+    service_account_id = data.google_service_account.workload-identifier-sa.email
     role = "roles/iam.serviceAccountUser"
 
     members = [

@@ -10,4 +10,8 @@ resource "google_cloud_run_v2_service" "cr_service" {
     }
     service_account = google_service_account.cloud_run_sa.email
   }
+
+  depends_on = [
+    google_service_account_iam_binding.cr-sa-github-wi-sauser-binding
+  ]
 }

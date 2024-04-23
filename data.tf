@@ -1,5 +1,5 @@
 locals {
-    github_wi_sa =  ${var.github_wi_sa}@${var.project_id}.iam.gserviceaccount.com
+    github_wi_sa =  "github-workload-identifier-sa"@${var.project_id}.iam.gserviceaccount.com
 
 }
 

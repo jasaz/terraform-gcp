@@ -1,4 +1,4 @@
-output "workload-identified-sa" {
+output "workload-identifier-sa" {
     value = data.google_service_account.workload-identifier-sa.email
 }
 

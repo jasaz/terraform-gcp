@@ -1,3 +1,7 @@
+output "workload-identified-sa" {
+    value = data.google_service_account.workload-identifier-sa.email
+}
+
 output "service_account_email" {
     value = google_service_account.cloud_run_sa.email
 }

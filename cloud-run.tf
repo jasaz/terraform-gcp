@@ -30,7 +30,7 @@ resource "google_cloud_run_v2_service" "cr_service" {
     containers {
       
       name = "nginx-sidecar"
-      image = nginx
+      image = "nginx"
       resources {
         limits = {
           cpu    = "2"

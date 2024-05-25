@@ -62,9 +62,4 @@ resource "google_cloud_run_v2_service" "cr_service" {
     
   }
 
-  /*
-  depends_on = [
-    google_service_account_iam_member.cr-sa-github-wi-sa-binding
-  ] */
-
 }
